@@ -1,0 +1,13 @@
+.idea
+.composer/
+bin/
+composer.phar
+
+clover.xml
+coveralls-upload.json
+phpunit.xml
+vendor/
+config/private.key
+config/public.key
+public/images
+.env
