@@ -12,6 +12,6 @@ use ValueObjects\Enum\Enum;
 class OrderStatus extends Enum
 {
     const WAITING_FOR_PAYMENT = 'waiting_for_payment';
-    const PAYED = 'payed';
+    const PAID = 'paid';
     const PAYMENT_REFUSED = 'payment_refused';
 }

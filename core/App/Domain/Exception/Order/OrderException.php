@@ -9,8 +9,8 @@ namespace AppCore\Domain\Exception\Order;
  */
 class OrderException extends \Exception
 {
-    public static function alreadyPayed()
+    public static function alreadyPaid()
     {
-        return new self('Order already payed');
+        return new self('Order already paid');
     }
 }

@@ -26,7 +26,7 @@ class Order
 
     private $modificationDate;
 
-    private $payedDate;
+    private $paidDate;
 
     /**
      * @var OrderStatus
@@ -96,9 +96,9 @@ class Order
     /**
      * @return \DateTimeImmutable
      */
-    public function getPayedDate() : \DateTimeImmutable
+    public function getPaidDate() : \DateTimeImmutable
     {
-        return $this->payedDate;
+        return $this->paidDate;
     }
 
     /**
@@ -113,18 +113,18 @@ class Order
      * @return $this
      * @throws OrderException
      */
-    public function setPayed() : self
+    public function setPaid() : self
     {
-        if ($this->status->is(OrderStatus::PAYED)) {
-            throw OrderException::alreadyPayed();
+        if ($this->status->is(OrderStatus::PAID)) {
+            throw OrderException::alreadyPaid();
         }
 
         /** @noinspection PhpUnhandledExceptionInspection */
-        $this->payedDate = new \DateTimeImmutable();
+        $this->paidDate = new \DateTimeImmutable();
         /** @noinspection PhpUnhandledExceptionInspection */
         $this->modificationDate = new \DateTimeImmutable();
         /** @noinspection PhpUndefinedMethodInspection */
-        $this->status = OrderStatus::PAYED();
+        $this->status = OrderStatus::PAID();
 
         return $this;
     }
@@ -133,10 +133,10 @@ class Order
      * @return Order
      * @throws OrderException
      */
-    public function setUnpayed() : self
+    public function setUnpaid() : self
     {
-        if ($this->status->is(OrderStatus::PAYED)) {
-            throw OrderException::alreadyPayed();
+        if ($this->status->is(OrderStatus::PAID)) {
+            throw OrderException::alreadyPaid();
         }
 
         /** @noinspection PhpUnhandledExceptionInspection */

@@ -59,9 +59,9 @@ class OrderService
     public function payOrder(OrderId $orderId) : Order {
         $order = $this->orderRepository->findOneById($orderId);
         if ($this->paymentService->processPayment($order->getAmount())) {
-            $order->setPayed();
+            $order->setPaid();
         } else {
-            $order->setUnpayed();
+            $order->setUnpaid();
         }
 
         $this->orderRepository->save($order);
